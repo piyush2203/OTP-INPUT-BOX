@@ -13,14 +13,14 @@ const App = () => {
   }, []);
 
   const handleKeyDown = (e,index) =>{
-    if(e.key === "Backspace" && !inputArray[index]){
+    if(e.key === "Backspace" && !e.target.value ){
       refArr.current[index-1]?.focus();
     }
   }
 
   const handleChange = (e,index) =>{
     console.log(e.target.value);
-    const val = e.target.value;
+    const val = e.target.value.trim();
     if(isNaN(val)){
       return;
     }
